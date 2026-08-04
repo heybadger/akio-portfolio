@@ -611,6 +611,151 @@
         filter: grayscale(0.3);
       }
 
+      /* Contact Section */
+      #contact {
+        padding: 5rem 2rem;
+      }
+      .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        align-items: start;
+      }
+      .contact-info {
+        padding-top: 1rem;
+      }
+      .contact-info h2 {
+        font-size: clamp(2rem, 3vw, 3rem);
+        font-weight: 500;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, #fff 30%, #9aa4ff 80%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .contact-info p {
+        color: var(--text-secondary);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        max-width: 400px;
+      }
+      .contact-info .contact-detail {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+      }
+      .contact-info .contact-detail i {
+        color: #7a8cff;
+        font-size: 1.2rem;
+        width: 24px;
+        text-align: center;
+      }
+      .contact-info .contact-detail a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .contact-info .contact-detail a:hover {
+        color: #fff;
+      }
+      .contact-form {
+        background: var(--bg-surface);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 24px;
+        padding: 2.5rem;
+      }
+      .contact-form .form-group {
+        margin-bottom: 1.5rem;
+      }
+      .contact-form label {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        margin-bottom: 0.4rem;
+        letter-spacing: 0.03em;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.9rem 1.2rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        color: #fff;
+        font-family: var(--font-primary);
+        font-size: 0.95rem;
+        transition: border-color 0.3s ease, background 0.3s ease;
+        outline: none;
+      }
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: #7a8cff;
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .contact-form input::placeholder,
+      .contact-form textarea::placeholder {
+        color: var(--text-secondary);
+        opacity: 0.6;
+      }
+      .contact-form textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+      .contact-form .submit-btn {
+        width: 100%;
+        padding: 1rem;
+        background: #7a8cff;
+        color: #090909;
+        border: none;
+        border-radius: 12px;
+        font-family: var(--font-primary);
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.3s ease, transform 0.15s ease;
+      }
+      .contact-form .submit-btn:hover {
+        opacity: 0.85;
+      }
+      .contact-form .submit-btn:active {
+        transform: scale(0.98);
+      }
+      .contact-form .submit-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      /* Success Message */
+      .success-message {
+        display: none;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+      .success-message.active {
+        display: block;
+      }
+      .success-message i {
+        font-size: 3.5rem;
+        color: #4ade80;
+        margin-bottom: 1rem;
+      }
+      .success-message h3 {
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+      .success-message p {
+        color: var(--text-secondary);
+        font-size: 1rem;
+      }
+
       footer {
         padding: 2.5rem 2rem;
         border-top: 1px solid rgba(255, 255, 255, 0.04);
@@ -676,7 +821,7 @@
         box-shadow: 8px 0 0 #ffffff;
       }
 
-      /* Section animations - fade up with slight translation */
+      /* Section animations */
       .reveal {
         opacity: 0;
         transform: translateY(30px);
@@ -717,6 +862,16 @@
           order: -1;
           max-width: 500px;
           margin: 0 auto;
+        }
+        .contact-wrapper {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        .contact-info {
+          order: 2;
+        }
+        .contact-form {
+          order: 1;
         }
       }
       @media (max-width: 768px) {
@@ -777,6 +932,9 @@
           height: 18px;
           box-shadow: 7px 0 0 #ffffff;
         }
+        .contact-form {
+          padding: 1.8rem;
+        }
       }
       @media (max-width: 480px) {
         section {
@@ -802,6 +960,14 @@
         .service-card {
           padding: 1.8rem 1.5rem;
         }
+        .contact-form {
+          padding: 1.2rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+          padding: 0.7rem 1rem;
+          font-size: 0.85rem;
+        }
       }
     </style>
   </head>
@@ -824,6 +990,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#tools">Tools</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <button
         class="hamburger"
@@ -849,6 +1016,7 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#tools">Tools</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
 
     <!-- HERO SECTION -->
@@ -865,7 +1033,7 @@
       </video>
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <p class="sub">Front-End Developer • Upcoming VMX Artist</p>
+        <p class="sub">Front-End Developer</p>
         <h1>Akio Ramos</h1>
         <p class="tagline">
           I love designing websites that is user-friendly and easy to navigate.
@@ -889,7 +1057,7 @@
     <section id="about">
       <div class="about-wrap">
         <div class="about-img reveal-left">
-          <img src="media/images/prokiyow.png" loading="lazy" />
+          <img src="media/images/prokiyow.png" loading="lazy" alt="Profile" />
         </div>
         <div class="reveal-right">
           <h2><span>Front End</span> Developer</h2>
@@ -970,7 +1138,7 @@
           margin-bottom: 2rem;
         "
       >
-        Tools and technologies I work with daily.
+        My Daily Tools for Front-End Development.
       </p>
       <div class="tools-grid">
         <div class="tool-card reveal">
@@ -980,15 +1148,6 @@
             <span class="tool-tag">React</span>
             <span class="tool-tag">Next.js</span>
             <span class="tool-tag">Tailwind CSS</span>
-          </div>
-        </div>
-        <div class="tool-card reveal">
-          <h4><i class="fas fa-server"></i> Backend</h4>
-          <div class="tool-tag-group">
-            <span class="tool-tag">PHP</span>
-            <span class="tool-tag">Firebase</span>
-            <span class="tool-tag">Git</span>
-            <span class="tool-tag">GitHub</span>
           </div>
         </div>
         <div class="tool-card reveal">
@@ -1004,10 +1163,97 @@
           <div class="tool-tag-group">
             <span class="tool-tag">VS Code</span>
             <span class="tool-tag">JetBrains IntelliJ</span>
-            <span class="tool-tag">Git</span>
             <span class="tool-tag">GitHub Desktop</span>
             <span class="tool-tag">Figma</span>
             <span class="tool-tag">Discord</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <div class="contact-wrapper">
+        <!-- Contact Info -->
+        <div class="contact-info reveal-left">
+          <h2>Let's Connect</h2>
+          <p>For work, collabs, or just a chat — reach out.</p>
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:akiojuliusjerald.ramoos@neu.edu.ph"
+              >akiojuliusjerald.ramoos@neu.edu.ph</a
+            >
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Philippines</span>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-clock"></i>
+            <span>Available for freelance work</span>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form reveal-right">
+          <form
+            id="contact-form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value="dc830092-c83d-462f-aa28-99b00725d262"
+            />
+            <input
+              type="hidden"
+              name="subject"
+              value="New Contact Form Submission"
+            />
+            <input type="hidden" name="from_name" value="DevKiyow Portfolio" />
+
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="akio@example.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell me about your project..."
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-btn" id="submitBtn">
+              <i class="fas fa-paper-plane" style="margin-right: 8px"></i>
+              Send Message
+            </button>
+          </form>
+
+          <!-- Success Message -->
+          <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. I'll get back to you soon.</p>
           </div>
         </div>
       </div>
@@ -1075,7 +1321,14 @@
 
         window.addEventListener("scroll", () => {
           navbar.classList.toggle("scrolled", window.scrollY > 40);
-          const sections = ["home", "about", "projects", "services", "tools"];
+          const sections = [
+            "home",
+            "about",
+            "projects",
+            "services",
+            "tools",
+            "contact",
+          ];
           let current = "home";
           sections.forEach((id) => {
             const el = document.getElementById(id);
@@ -1142,6 +1395,53 @@
           { threshold: 0.1 }
         );
         revealElements.forEach((el) => observer.observe(el));
+
+        const contactForm = document.getElementById("contact-form");
+        const submitBtn = document.getElementById("submitBtn");
+        const successMessage = document.getElementById("successMessage");
+
+        contactForm.addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          submitBtn.disabled = true;
+          submitBtn.innerHTML =
+            '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+          const formData = new FormData(contactForm);
+
+          try {
+            const response = await fetch(contactForm.action, {
+              method: "POST",
+              body: formData,
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+              contactForm.style.display = "none";
+              successMessage.classList.add("active");
+
+              setTimeout(() => {
+                contactForm.reset();
+                contactForm.style.display = "block";
+                successMessage.classList.remove("active");
+                submitBtn.disabled = false;
+                submitBtn.innerHTML =
+                  '<i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send Message';
+              }, 5000);
+            } else {
+              alert("Something went wrong. Please try again.");
+              submitBtn.disabled = false;
+              submitBtn.innerHTML =
+                '<i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send Message';
+            }
+          } catch (error) {
+            alert("Network error. Please check your connection and try again.");
+            submitBtn.disabled = false;
+            submitBtn.innerHTML =
+              '<i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Send Message';
+          }
+        });
 
         const floatingAudio = document.getElementById("floatingAudioPlayer");
         const floatingBtn = document.getElementById("floatingPlayBtn");
